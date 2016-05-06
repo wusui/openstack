@@ -20,7 +20,6 @@ copy_file ceph.conf $openstack_node /etc/ceph 0644
 rm -f ceph.conf
 ssh $openstack_node sudo yum -y install python-rbd
 ssh $openstack_node sudo yum -y install ceph-common
-source ./keystonerc_admin
 ssh $ceph_node "sudo ceph auth get-or-create client.cinder mon 'allow r' osd 'allow class-read object_prefix rbd_children, allow rwx pool=volumes, allow rwx pool=vms, allow rx pool=images'"
 ssh $ceph_node "sudo ceph auth get-or-create client.glance mon 'allow r' osd 'allow class-read object_prefix rbd_children, allow rwx pool=images'"
 ssh $ceph_node "sudo ceph auth get-or-create client.cinder-backup mon 'allow r' osd 'allow class-read object_prefix rbd_children, allow rwx pool=backups'"
