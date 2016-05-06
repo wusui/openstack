@@ -18,6 +18,6 @@ source ./copy_func.sh
 source ./fix_conf_file.sh
 openstack_node=${1-magna064}
 ceph_node=${2-magna029}
-./packstack.sh $openstqack_node $ceph_node
-./connectceph.sh $openstqack_node $ceph_node
-./image_create.sh $openstqack_node $ceph_node
+./packstack.sh $openstack_node $ceph_node
+./connectceph.sh $openstack_node $ceph_node
+./image_create.sh $openstack_node $ceph_node
