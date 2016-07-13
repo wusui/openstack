@@ -4,8 +4,8 @@
 #
 source ./copy_func.sh
 source ./fix_conf_file.sh
-openstack_node=${1-magna064}
-ceph_node=${2-magna029}
+openstack_node=${1}
+ceph_node=${2}
 
 copy_file files/rhel-server-7.2-x86_64-boot.iso $openstack_node .
 copy_file execs/run_openstack.sh $openstack_node . 0755

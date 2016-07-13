@@ -1,6 +1,6 @@
 #/bin/bash -fv
 #
-# copy_file(<filename>, <node>, <directory>, [<permissions>], [<owner>]
+# copy_file(<filename>, <node>, <directory>, [<permissions>], [<owner>])
 # 
 # copy a file -- this is needed because passwordless ssh does not
 #                work when sudo'ing.
