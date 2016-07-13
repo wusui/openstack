@@ -11,8 +11,8 @@
 #
 source ./copy_func.sh
 source ./fix_conf_file.sh
-openstack_node=${1-magna064}
-ceph_node=${2-magna029}
+openstack_node=${1}
+ceph_node=${2}
 
 scp $ceph_node:/etc/ceph/ceph.conf ./ceph.conf
 ssh $openstack_node sudo mkdir /etc/ceph

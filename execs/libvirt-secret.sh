@@ -3,7 +3,7 @@
 #
 # Generate a libvirt secret on the Openstack node. 
 #
-openstack_node=${1-magna064}
+openstack_node=${1}
 uuid=`uuidgen`
 cat > secret.xml <<EOF
 <secret ephemeral='no' private='no'>

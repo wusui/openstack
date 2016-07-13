@@ -16,8 +16,14 @@
 
 source ./copy_func.sh
 source ./fix_conf_file.sh
-openstack_node=${1-magna064}
-ceph_node=${2-magna029}
+openstack_node=${1}
+ceph_node=${2}
 ./packstack.sh $openstack_node $ceph_node
+echo 'done running packstack'
+#read foo
+sleep 60
 ./connectceph.sh $openstack_node $ceph_node
+echo 'done connecting'
+#read foo
+sleep 60
 ./image_create.sh $openstack_node $ceph_node

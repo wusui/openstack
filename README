@@ -1,0 +1,23 @@
+This directory contains scripts to quickly bring up an OpenStack instance,
+attach a ceph cluster, create a nova compute node, and store the associated glance images, cinder volumes, nova vm, and cinder backup on ceph via rbd.
+
+execs is a directory that contains executables that are copied and remotely
+run on the OpenStack instance
+
+files is a directory that contains templates used to initialize OpenStack
+conf files.  These templates reflect the current state of these conf files.
+If further development is necessary in the future, these templates should
+probably be removed and direct editing of the OpenStack conf files should
+probably be performed.
+
+To install openstack:
+./openstack.sh <openstack-admin-node> <ceph-monitor-node>
+
+This assumes that the ceph cluster is already set up.
+
+To setup a ceph-cluster using an iso and ceph-deploy:
+./ceph_install.sh <admin-node> <mon-node> <osd-node> <osd-node> <osd-node>
+
+To setup a ceph-cluster using the cdn and ceph-ansible:
+cd ceph_install_w_ansible
+./ceph_install.sh <admin-node> <mon-node> <osd-node> <osd-node> <osd-node>

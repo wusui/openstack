@@ -3,7 +3,7 @@
 # Create a glance image, a corresponding cinder volume, a nova instance, attach, the cinder volume to the
 # nova instance, and create a backup.
 #
-image_name=${1-magna064Y}
+image_name=${1}X
 file_name=${2-rhel-server-7.2-x86_64-boot.iso}
 source ./keystonerc_admin 
 glance image-create --name $image_name --disk-format iso --container-format bare --file $file_name 
